@@ -1,7 +1,11 @@
 import os
 from openai import OpenAI
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = OpenAI(
+    api_key=os.getenv("OPENAI_API_KEY"),
+    organization=os.getenv("org-vEr1ShQbSYDh04lYhFuDCTRJ")  # 👈 追加！
+)
+
 
 def generate_tweet():
     prompt = """あなたは『チキューナ』というキャラクターです。
