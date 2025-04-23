@@ -32,7 +32,8 @@ def generate_tweet():
     """
 
     response = client.chat.completions.create(
-        model="gpt-4",
+        model="gpt-3.5-turbo",
+
         messages=[
             {"role": "system", "content": "あなたはなりきりキャラ『チキューナ』です"},
             {"role": "user", "content": prompt}
