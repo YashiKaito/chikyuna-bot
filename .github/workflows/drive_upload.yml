@@ -18,11 +18,7 @@ jobs:
           python-version: '3.10'
 
       - name: Install dependencies
-        run: pip install pydrive2
-
-      - name: Install dependencies
-      　run: pip install pandas
-
+        run: pip install pandas pydrive2
 
       - name: Run fan analysis
         run: python tweet_bot/analyze_fans.py
