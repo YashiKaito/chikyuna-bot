@@ -1,4 +1,4 @@
-name: Weekly Fan Analysis
+name: Fan Analysis
 
 on:
   schedule:
@@ -23,7 +23,8 @@ jobs:
         run: python tweet_bot/analyze_fans.py
 
       - name: Upload fan score files
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
+
         with:
           name: fan-scores
           path: |
