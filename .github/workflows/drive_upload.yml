@@ -1,7 +1,10 @@
-name: Weekly Fan Upload to Google Drive
+name: Analytics Fan Upload to Google Drive
 
 on:
+  schedule:
+    - cron: '0 21 * * 0'  # 毎週月曜 6:00 JST
   workflow_dispatch:
+
 
 jobs:
   upload_to_drive:
