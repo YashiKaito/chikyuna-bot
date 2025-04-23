@@ -1,8 +1,7 @@
-
-import openai
 import os
+from openai import OpenAI
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 def generate_tweet():
     prompt = """あなたは『チキューナ』というキャラクターです。
@@ -29,7 +28,7 @@ def generate_tweet():
 以上を踏まえて、今日の投稿を生成してください。
     """
 
-    response = openai.ChatCompletion.create(
+    response = client.chat.completions.create(
         model="gpt-4",
         messages=[
             {"role": "system", "content": "あなたはなりきりキャラ『チキューナ』です"},
@@ -37,4 +36,4 @@ def generate_tweet():
         ],
         max_tokens=100
     )
-    return response.choices[0].message["content"].strip()
+    return response.choices[0].message.content.strip()
