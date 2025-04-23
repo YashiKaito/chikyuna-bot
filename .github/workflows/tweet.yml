@@ -21,7 +21,8 @@ jobs:
           python-version: '3.10'
 
       - name: Install dependencies
-        run: pip install openai tweepy
+        run: pip install openai==0.28 tweepy
+
 
       - name: Run Tweet Bot
         env:
