@@ -21,12 +21,3 @@ jobs:
 
       - name: Run fan analysis script
         run: python tweet_bot/analyze_fans.py
-
-      - name: Upload fan score files
-        uses: actions/upload-artifact@v2
-
-        with:
-          name: fan-scores
-          path: |
-            weekly_fan_score.csv
-            total_fan_score.csv
