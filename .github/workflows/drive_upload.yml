@@ -20,5 +20,9 @@ jobs:
       - name: Install dependencies
         run: pip install pydrive2
 
+      - name: Run fan analysis
+        run: python tweet_bot/analyze_fans.py
+
+
       - name: Upload to Google Drive
         run: python tweet_bot/upload_to_gdrive.py
