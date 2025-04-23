@@ -70,7 +70,7 @@ response = client.chat.completions.create(
         {"role": "system", "content": "あなたはキャラクター『チキューナ』としてツイート案を生成するAIです。"},
         {"role": "user", "content": character_prompt}
     ],
-    max_tokens=100
+    max_tokens=180
 )
 
 generated = response.choices[0].message.content.strip()
