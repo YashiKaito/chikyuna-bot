@@ -1,0 +1,24 @@
+name: Weekly Fan Upload to Google Drive
+
+on:
+  workflow_dispatch:
+
+jobs:
+  upload_to_drive:
+    runs-on: ubuntu-latest
+    env:
+      GDRIVE_CREDENTIALS_JSON: ${{ secrets.GDRIVE_CREDENTIALS_JSON }}
+      GDRIVE_FOLDER_ID: ${{ secrets.GDRIVE_FOLDER_ID }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install pydrive2
+
+      - name: Upload to Google Drive
+        run: python tweet_bot/upload_to_gdrive.py
