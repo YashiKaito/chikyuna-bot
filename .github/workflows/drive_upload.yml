@@ -20,6 +20,10 @@ jobs:
       - name: Install dependencies
         run: pip install pydrive2
 
+      - name: Install dependencies
+      　run: pip install pandas
+
+
       - name: Run fan analysis
         run: python tweet_bot/analyze_fans.py
 
