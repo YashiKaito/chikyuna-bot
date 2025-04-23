@@ -21,7 +21,7 @@ jobs:
           python-version: '3.10'
 
       - name: Install dependencies
-        run: pip install pandas pydrive2　tweepy
+        run: pip install pandas pydrive2 tweepy
 
       - name: Run fan analysis
         run: python tweet_bot/analyze_fans.py
