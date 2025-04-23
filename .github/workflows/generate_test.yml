@@ -23,10 +23,9 @@ jobs:
 
       - name: Run Analyzer and Generator (Test)
         run: python tweet_bot/analyze_and_generate.py
-
+      
       - name: Upload generated tweet as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3.1.3
         with:
-          name: generated-tweet
-          path: saved/
-
+          name: generated-tweet         # ← Artifact の名前
+          path: saved/                  # ← 保存したフォルダのパス
