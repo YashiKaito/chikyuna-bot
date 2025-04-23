@@ -29,3 +29,9 @@ jobs:
 
       - name: Upload to Google Drive
         run: python tweet_bot/upload_to_gdrive.py
+
+env:
+  GDRIVE_CREDENTIALS_JSON: ${{ secrets.GDRIVE_CREDENTIALS_JSON }}
+  GDRIVE_FOLDER_ID: ${{ secrets.GDRIVE_FOLDER_ID }}
+  TW_BEARER_TOKEN: ${{ secrets.TW_BEARER_TOKEN }}
+  TW_USERNAME: ${{ secrets.TW_USERNAME }}  # ←これが必要！
